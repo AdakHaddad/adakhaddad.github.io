@@ -11,42 +11,100 @@ import Head from "next/head";
 import Nav from "@/components/nav";
 import Typewriter from "typewriter-effect";
 import Web from "@/components/web";
+import { FaDownload, FaArrowRight, FaCode, FaTimes } from "react-icons/fa";
 
 export default function Home() {
+  const [showCode, setShowCode] = useState(false);
+
   return (
     <>
       <Head>
         <title>AdakHaddad | Portfolio</title>
+        <meta name="description" content="Muhammad Muqtada Alhaddad - Full Stack Developer" />
       </Head>
-      
+
       <Nav />
-      
-      {/* Hero Section with Typewriter */}
-      <section className="min-h-[70vh] flex items-center">
-        <h1 className="gradient-text">
-          <Typewriter
-            options={{
-              strings: ["Hey There 👋", "I'm Muhammad..."],
-              loop: true,
-              autoStart: true,
-            }}
-          />
-        </h1>
+
+      {/* Hero Section */}
+      <section className="relative min-h-[70vh] flex items-center justify-center py-16 md:py-24">
+        {/* Background Glow Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="section-container relative z-10">
+          <span className="badge">Welcome to my Portfolio</span>
+          
+          {/* Typewriter Heading */}
+          <h1 className="text-4xl md:text-7xl font-bold text-white">
+            <Typewriter
+              options={{
+                strings: [
+                  "Hey There 👋",
+                  "I'm Muhammad Muqtada Alhaddad",
+                  "Long Life Student 📚",
+                  "Tech Enthusiast 🤖",
+                  "Full Stack Developer 💻",
+                ],
+                speed: 50, deleteSpeed: 30, loop: true, autoStart: true,
+              }}
+            />
+          </h1>
+
+          {/* CTA Buttons */}
+          <div className="flex gap-4">
+            <a href="https://drive.google.com/..." className="btn-primary">
+              <FaDownload /> View CV & Certificates
+            </a>
+            <a href="#projects" className="btn-secondary">
+              Explore Projects <FaArrowRight />
+            </a>
+          </div>
+        </div>
       </section>
-      
-      {/* Projects */}
-      <Web />
-      
+
+      {/* Projects Section */}
+      <section id="projects">
+        <Web />
+      </section>
+
       {/* SparkAR Section */}
-      <section className="glass-card">
-        <h2>SparkAR Creator</h2>
-        <img src="/Assets/SparkAR.png" />
+      <section className="py-16 md:py-24">
+        <div className="glass-card p-6 md:p-10">
+          <h2 className="gradient-text-primary">SparkAR Creator</h2>
+          <p>I also create interactive Instagram filters using SparkAR! 😎</p>
+          <img src="/Assets/spark.gif" alt="SparkAR Animation" />
+          <img src="/Assets/SparkAR.png" alt="SparkAR Projects" />
+        </div>
       </section>
-      
-      {/* CTA */}
-      <a href="drive.google.com/..." className="btn-primary">
-        Download My CV
-      </a>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24">
+        <h2 className="gradient-text">Let's Work Together</h2>
+        <a href="https://drive.google.com/..." className="btn-primary">
+          <FaDownload /> Download My CV
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 border-t border-white/10">
+        <p>© 2024 Muhammad Muqtada Alhaddad. Built with Next.js & Tailwind CSS.</p>
+      </footer>
+
+      {/* Easter Egg: Floating Code Button */}
+      <button onClick={() => setShowCode(true)} className="fixed bottom-6 right-6">
+        <FaCode />
+      </button>
+
+      {/* Source Code Modal */}
+      {showCode && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="glass-card w-full max-w-4xl max-h-[80vh]">
+            <pre><code>{sourceCode}</code></pre>
+          </div>
+        </div>
+      )}
     </>
   );
 }`;
@@ -84,24 +142,22 @@ export default function Home() {
             </span>
 
             {/* Typewriter Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in delay-100">
-              <span className="gradient-text">
-                <Typewriter
-                  options={{
-                    strings: [
-                      `Hey There 👋`,
-                      `I'm Muhammad Muqtada Alhaddad`,
-                      `Long Life Student 📚`,
-                      `Tech Enthusiast 🤖`,
-                      `Full Stack Developer 💻`,
-                    ],
-                    speed: 50,
-                    deleteSpeed: 30,
-                    loop: true,
-                    autoStart: true,
-                  }}
-                />
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in delay-100 text-white">
+              <Typewriter
+                options={{
+                  strings: [
+                    `Hey There 👋`,
+                    `I'm Muhammad Muqtada Alhaddad`,
+                    `Long Life Student 📚`,
+                    `Tech Enthusiast 🤖`,
+                    `Full Stack Developer 💻`,
+                  ],
+                  speed: 50,
+                  deleteSpeed: 30,
+                  loop: true,
+                  autoStart: true,
+                }}
+              />
             </h1>
 
             {/* Subtitle */}

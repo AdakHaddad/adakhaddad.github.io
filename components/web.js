@@ -2,11 +2,11 @@ import React from "react";
 
 const WebsitePreview = ({ title, url }) => {
   return (
-    <div className="glass-card overflow-hidden rounded-xl hover:glow-primary transition-all duration-300">
+    <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300">
       <iframe
         title={title}
         src={url}
-        className="w-full border-0"
+        className="w-full border-0 bg-white"
         style={{ height: "50vh" }}
         loading="lazy"
       />
