@@ -1,11 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Nav from "@/components/nav";
 import Typewriter from "typewriter-effect";
 import Web from "@/components/web";
-import { FaDownload, FaArrowRight } from "react-icons/fa";
+import { FaDownload, FaArrowRight, FaCode, FaTimes } from "react-icons/fa";
+
+// The actual source code of this page (for easter egg)
+const sourceCode = `import React, { useState } from "react";
+import Head from "next/head";
+import Nav from "@/components/nav";
+import Typewriter from "typewriter-effect";
+import Web from "@/components/web";
 
 export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>AdakHaddad | Portfolio</title>
+      </Head>
+      
+      <Nav />
+      
+      {/* Hero Section with Typewriter */}
+      <section className="min-h-[70vh] flex items-center">
+        <h1 className="gradient-text">
+          <Typewriter
+            options={{
+              strings: ["Hey There 👋", "I'm Muhammad..."],
+              loop: true,
+              autoStart: true,
+            }}
+          />
+        </h1>
+      </section>
+      
+      {/* Projects */}
+      <Web />
+      
+      {/* SparkAR Section */}
+      <section className="glass-card">
+        <h2>SparkAR Creator</h2>
+        <img src="/Assets/SparkAR.png" />
+      </section>
+      
+      {/* CTA */}
+      <a href="drive.google.com/..." className="btn-primary">
+        Download My CV
+      </a>
+    </>
+  );
+}`;
+
+export default function Home() {
+  const [showCode, setShowCode] = useState(false);
+
   return (
     <>
       <Head>
@@ -164,6 +212,53 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* Easter Egg: Floating Code Button */}
+      <button
+        onClick={() => setShowCode(true)}
+        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-dark-800/50 border border-white/5 flex items-center justify-center text-dark-500 hover:text-primary-400 hover:border-primary-500/30 hover:bg-dark-800 transition-all duration-300 opacity-30 hover:opacity-100 z-40"
+        title="View page source"
+      >
+        <FaCode className="text-sm" />
+      </button>
+
+      {/* Source Code Modal */}
+      {showCode && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/90 backdrop-blur-sm fade-in"
+          onClick={() => setShowCode(false)}
+        >
+          <div 
+            className="glass-card w-full max-w-4xl max-h-[80vh] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
+                  <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                  <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
+                </div>
+                <span className="text-sm text-dark-400">pages/index.js</span>
+              </div>
+              <button
+                onClick={() => setShowCode(false)}
+                className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-dark-400 hover:text-white hover:bg-white/10 transition-all"
+              >
+                <FaTimes />
+              </button>
+            </div>
+            
+            {/* Code Content */}
+            <div className="p-4 overflow-auto max-h-[calc(80vh-60px)]">
+              <pre className="text-xs md:text-sm text-dark-200 font-mono leading-relaxed">
+                <code>{sourceCode}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
