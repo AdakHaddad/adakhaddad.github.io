@@ -17,20 +17,26 @@ const WebsitePreview = ({ title, url }) => {
 const Web = () => {
   const websites = [
     { title: "Konekteti", url: "https://konekteti22.web.app" },
-    { title: "Bingke 61", url: "https://bingke61.vercel.app" },
+    { title: "Bingke 61", url: "https://bingke61.netlify.app" },
     { title: "Al-amin Yogyakarta", url: "https://alaminyk.vercel.app" },
-    { title: "Quran Quest", url: "https://quran-quest.vercel.app" },
-    { title: "Pokemon TCG", url: "https://pokemon-tcg-steel.vercel.app" },
-    { title: "LokaLink", url: "https://lokalink.vercel.app" },
+    { title: "DocuMind", url: "https://documind-nocturn-ai.netlify.app" },
+    { title: "Harvest Stack", url: "https://harvest-stack.netlify.app" },
+    { title: "LokaLink", url: "https://loka-link.netlify.app" },
+    { title: "GIK ExpoMap", url: "https://gik-expomap.netlify.app" },
+    { title: "Bawang Capstone", url: "https://bawang-capstone.netlify.app" },
+    { title: "SimDosma", url: "https://simdosma.netlify.app" },
   ];
 
   const descriptions = [
-    "Deploying an election mechanism with Firebase Hosting",
-    "Designed a simple order page for Bingke 61 cake shop",
-    "Designed organization profile page",
-    "Duolingo-style Quran memorization app with gamification",
-    "Pokemon card with holographic gyro effect implementation",
+    "Election mechanism platform with Firebase Hosting",
+    "Order page for Bingke 61 traditional cake shop",
+    "Organization profile page for Al-amin Yogyakarta",
+    "AI-powered document analysis and mind mapping tool",
+    "Smart agriculture IoT monitoring dashboard",
     "Local community platform connecting neighborhoods",
+    "GIS-based expo mapping and navigation system",
+    "Capstone project for smart farming solutions",
+    "Academic advisor management system",
   ];
 
   const websiteDescriptionPairs = websites.map((website, index) => {
