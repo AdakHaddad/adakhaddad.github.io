@@ -148,9 +148,10 @@ export default function Home() {
                   strings: [
                     `Hey There 👋`,
                     `I'm Muhammad Muqtada Alhaddad`,
-                    `Long Life Student 📚`,
-                    `Tech Enthusiast 🤖`,
-                    `Full Stack Developer 💻`,
+                    `Embedded Systems Engineer ⚡`,
+                    `Full Stack Web Developer �`,
+                    `IoT & Hardware Enthusiast 🔧`,
+                    `AI/ML Explorer 🤖`,
                   ],
                   speed: 50,
                   deleteSpeed: 30,
@@ -161,9 +162,9 @@ export default function Home() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-dark-400 text-lg md:text-xl max-w-2xl mb-8 fade-in delay-200">
-              Passionate about building beautiful, functional web applications 
-              and exploring cutting-edge technologies.
+            <p className="text-dark-300 text-lg md:text-xl max-w-2xl mb-8 fade-in delay-200">
+              Building solutions across the stack — from Verilog & STM32 embedded systems,
+              IoT smart agriculture, to modern web apps with Next.js and .NET WPF.
             </p>
 
             {/* CTA Buttons */}
@@ -179,6 +180,66 @@ export default function Home() {
               <a href="#projects" className="btn-secondary flex items-center gap-2">
                 Explore Projects <FaArrowRight />
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 rounded-full bg-secondary-500/10 border border-secondary-500/30 text-secondary-400 text-sm font-medium mb-4">
+              What I Do
+            </span>
+            <h2 className="section-title gradient-text">
+              Skills & Expertise
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Embedded Systems */}
+            <div className="glass-card p-6 text-center hover:glow-primary transition-all duration-300">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-500/20 flex items-center justify-center text-2xl">
+                ⚡
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Embedded Systems</h3>
+              <p className="text-dark-400 text-sm">
+                Verilog, STM32, Arduino, FPGA, Neural Network Hardware (ANNiVerSary)
+              </p>
+            </div>
+
+            {/* Web Development */}
+            <div className="glass-card p-6 text-center hover:glow-primary transition-all duration-300">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-secondary-500/20 flex items-center justify-center text-2xl">
+                💻
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Web Development</h3>
+              <p className="text-dark-400 text-sm">
+                React, Next.js, PHP, Tailwind CSS, Firebase, .NET WPF
+              </p>
+            </div>
+
+            {/* IoT */}
+            <div className="glass-card p-6 text-center hover:glow-primary transition-all duration-300">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-accent-500/20 flex items-center justify-center text-2xl">
+                🔧
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">IoT & Hardware</h3>
+              <p className="text-dark-400 text-sm">
+                Smart Agriculture, Irrigation Systems, Sensor Integration, WiFi Modules
+              </p>
+            </div>
+
+            {/* AI/ML */}
+            <div className="glass-card p-6 text-center hover:glow-primary transition-all duration-300">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-500/20 flex items-center justify-center text-2xl">
+                🤖
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">AI & Creative</h3>
+              <p className="text-dark-400 text-sm">
+                DocuMind, TrendRadar, SparkAR Filters, Quran Quest App
+              </p>
             </div>
           </div>
         </div>
