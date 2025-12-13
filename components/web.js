@@ -19,12 +19,18 @@ const Web = () => {
     { title: "Konekteti", url: "https://konekteti22.web.app" },
     { title: "Bingke 61", url: "https://bingke61.vercel.app" },
     { title: "Al-amin Yogyakarta", url: "https://alaminyk.vercel.app" },
+    { title: "Quran Quest", url: "https://quran-quest.vercel.app" },
+    { title: "Pokemon TCG", url: "https://pokemon-tcg-steel.vercel.app" },
+    { title: "LokaLink", url: "https://lokalink.vercel.app" },
   ];
 
   const descriptions = [
     "Deploying an election mechanism with Firebase Hosting",
     "Designed a simple order page for Bingke 61 cake shop",
     "Designed organization profile page",
+    "Duolingo-style Quran memorization app with gamification",
+    "Pokemon card with holographic gyro effect implementation",
+    "Local community platform connecting neighborhoods",
   ];
 
   const websiteDescriptionPairs = websites.map((website, index) => {
