@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { FaInstagram, FaLinkedin, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub, FaBars, FaTimes, FaBookOpen } from "react-icons/fa";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,8 +27,16 @@ export default function Nav() {
           </div>
         </Link>
 
-        {/* Desktop Social Links */}
+        {/* Desktop Nav Links + Social */}
         <ul className="hidden md:flex items-center space-x-4">
+          <li>
+            <Link
+              href="/blog/"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-primary-500/20 hover:border-primary-500/50 hover:glow-primary transition-all duration-300"
+            >
+              <FaBookOpen /> Blog
+            </Link>
+          </li>
           {socialLinks.map((social, index) => (
             <li key={index}>
               <a
@@ -58,6 +66,15 @@ export default function Nav() {
       {isMenuOpen && (
         <div className="md:hidden mt-4 pt-4 border-t border-white/10">
           <ul className="flex justify-center space-x-4">
+            <li>
+              <Link
+                href="/blog/"
+                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-primary-500/20 hover:border-primary-500/50 transition-all duration-300"
+                aria-label="Blog"
+              >
+                <FaBookOpen className="text-xl" />
+              </Link>
+            </li>
             {socialLinks.map((social, index) => (
               <li key={index}>
                 <a
