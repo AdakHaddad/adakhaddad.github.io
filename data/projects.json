@@ -1,0 +1,60 @@
+{
+  "_readme": "Add overrides here keyed by repo name (or website domain for extras). You never need to touch component code — new public repos appear automatically at next build. Allowed fields: description, blogUrl, logo (path inside the repo, default logo works automatically), hide (true to exclude).",
+  "overrides": {
+    "Konekteti": {
+      "description": "Election mechanism platform with Firebase Hosting"
+    },
+    "DocuMind": {
+      "description": "AI-powered document analysis and mind mapping tool",
+      "blogUrl": "https://example.com/my-documind-post"
+    }
+  },
+  "hidden": ["adakhaddad.github.io"],
+  "extras": [
+    {
+      "name": "Konekteti",
+      "url": "https://konekteti22.web.app",
+      "description": "Election mechanism platform with Firebase Hosting"
+    },
+    {
+      "name": "Bingke 61",
+      "url": "https://bingke61.netlify.app",
+      "description": "Order page for Bingke 61 traditional cake shop"
+    },
+    {
+      "name": "Al-amin Yogyakarta",
+      "url": "https://alaminyk.vercel.app",
+      "description": "Organization profile page for Al-amin Yogyakarta"
+    },
+    {
+      "name": "DocuMind",
+      "url": "https://documind-nocturn-ai.netlify.app",
+      "description": "AI-powered document analysis and mind mapping tool"
+    },
+    {
+      "name": "Harvest Stack",
+      "url": "https://harvest-stack.netlify.app",
+      "description": "Smart agriculture IoT monitoring dashboard"
+    },
+    {
+      "name": "LokaLink",
+      "url": "https://loka-link.netlify.app",
+      "description": "Local community platform connecting neighborhoods"
+    },
+    {
+      "name": "GIK ExpoMap",
+      "url": "https://gik-expomap.netlify.app",
+      "description": "GIS-based expo mapping and navigation system"
+    },
+    {
+      "name": "Bawang Capstone",
+      "url": "https://bawang-capstone.netlify.app",
+      "description": "Capstone project for smart farming solutions"
+    },
+    {
+      "name": "SimDosma",
+      "url": "https://simdosma.netlify.app",
+      "description": "Academic advisor management system"
+    }
+  ]
+}

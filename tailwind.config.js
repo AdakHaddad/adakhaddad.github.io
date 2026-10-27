@@ -75,6 +75,10 @@ module.exports = {
         'slide-up': 'slideUp 0.6s ease-out',
         'fade-in': 'fadeIn 0.8s ease-out',
         'gradient-x': 'gradient-x 3s ease infinite',
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee 30s linear infinite reverse',
+        'drift': 'drift 10s ease-in-out infinite',
+        'pulse-ring': 'pulse-ring 2.5s ease-out infinite',
       },
       keyframes: {
         float: {
@@ -96,6 +100,19 @@ module.exports = {
         'gradient-x': {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '33%': { transform: 'translate(8px, -14px)' },
+          '66%': { transform: 'translate(-10px, 6px)' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(0.6)', opacity: '0.8' },
+          '100%': { transform: 'scale(2.2)', opacity: '0' },
         },
       },
       fontFamily: {

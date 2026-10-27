@@ -4,6 +4,8 @@ import Nav from "@/components/nav";
 import Typewriter from "typewriter-effect";
 import Web from "@/components/web";
 import { FaDownload, FaArrowRight, FaCode, FaTimes } from "react-icons/fa";
+import LogoShowcase from "@/components/logo-showcase";
+import { getProjects } from "@/lib/projects";
 
 // The actual source code of this page (for easter egg)
 const sourceCode = `import React, { useState } from "react";
@@ -109,7 +111,7 @@ export default function Home() {
   );
 }`;
 
-export default function Home() {
+export default function Home({ projects = [] }) {
   const [showCode, setShowCode] = useState(false);
 
   return (
@@ -250,6 +252,13 @@ export default function Home() {
         <Web />
       </section>
 
+      {/* Logo Showcase Variant Switcher */}
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <LogoShowcase projects={projects} />
+        </div>
+      </section>
+
       {/* SparkAR Section */}
       <section className="py-16 md:py-24">
         <div className="section-container">
@@ -378,4 +387,9 @@ export default function Home() {
       )}
     </>
   );
+}
+
+export async function getStaticProps() {
+  const projects = await getProjects();
+  return { props: { projects } };
 }
